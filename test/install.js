@@ -28,14 +28,14 @@ describe('component install', function(){
 
   describe('[name]', function(){
     it('should show an error message if the component is named incorrectly', function(done) {
-      exec('bin/component install component-emitter', function(err, stdout) {
+      exec('bin/faiton install component-emitter', function(err, stdout) {
         assert(err);
         done();
       })
     })
 
     it('should install a single component', function(done){
-      exec('bin/component install component/emitter@1.0.0', function(err, stdout){
+      exec('bin/faiton install component/emitter@1.0.0', function(err, stdout){
         if (err) return done(err);
         stdout.should.include('install');
         stdout.should.include('complete');
@@ -46,7 +46,7 @@ describe('component install', function(){
     })
 
     it('should add the component to ./component.json', function(done){
-      exec('bin/component install component/emitter@0.0.4', function(err, stdout){
+      exec('bin/faiton install component/emitter@0.0.4', function(err, stdout){
         if (err) return done(err);
         var json = require(path.resolve('component.json'));
         json.dependencies.should.have.property('component/emitter', '0.0.4');
@@ -55,7 +55,7 @@ describe('component install', function(){
     })
 
     it('should install dependencies', function(done){
-      exec('bin/component install component/overlay@0.1.1', function(err, stdout){
+      exec('bin/faiton install component/overlay@0.1.1', function(err, stdout){
         if (err) return done(err);
         stdout.should.include('install');
         stdout.should.include('complete');
@@ -68,14 +68,14 @@ describe('component install', function(){
     })
 
     it('should install dependencies through chain of local dependencies', function(done){
-      exec('cd test/fixtures/local && ../../../bin/component install', function(err, stdout){
+      exec('cd test/fixtures/local && ../../../bin/faiton install', function(err, stdout){
         if (err) return done(err);
         done();
       })
     })
 
     it('should download files completely', function(done){
-      exec('bin/component install fortawesome/font-awesome@4.0.3', function(err, stdout){
+      exec('bin/faiton install fortawesome/font-awesome@4.0.3', function(err, stdout){
         if (err) return done(err);
         var stats = fs.statSync(path.resolve('components/fortawesome/font-awesome/v4.0.3/fonts/fontawesome-webfont.woff'));
         stdout.should.include('install');
@@ -85,7 +85,7 @@ describe('component install', function(){
     })
 
     it('should also download json files', function (done) {
-      exec('bin/component install swatinem/t@0.0.1', function(err, stdout){
+      exec('bin/faiton install swatinem/t@0.0.1', function(err, stdout){
         if (err) return done(err);
         var exists = fs.existsSync(path.resolve('components/swatinem/t/0.0.1/lib/definitions.json'));
         exists.should.be.true;
@@ -98,7 +98,7 @@ describe('component install', function(){
 
   describe('[name...]', function(){
     it('should install the multiple components', function(done){
-      exec('bin/component install component/domify@1.0.0 component/is-module@1.0.0', function(err, stdout){
+      exec('bin/faiton install component/domify@1.0.0 component/is-module@1.0.0', function(err, stdout){
         if (err) return done(err);
         stdout.should.include('install');
         stdout.should.include('complete');
@@ -112,7 +112,7 @@ describe('component install', function(){
   })
 
   it('should default to installing from ./component.json', function(done){
-    exec('bin/component install', function(err, stdout){
+    exec('bin/faiton install', function(err, stdout){
       if (err) return done(err);
       stdout.should.include('install');
       stdout.should.include('complete');
@@ -126,7 +126,7 @@ describe('component install', function(){
   })
 
   it('should install dev deps when --dev is used', function(done){
-    exec('bin/component install -d', function(err, stdout){
+    exec('bin/faiton install -d', function(err, stdout){
       if (err) return done(err);
       stdout.should.include('install');
       stdout.should.include('complete');
@@ -140,7 +140,7 @@ describe('component install', function(){
   })
 
   it('should be aliased as "add"', function(done){
-    exec('bin/component add component/emitter@1.0.0', function(err, stdout){
+    exec('bin/faiton add component/emitter@1.0.0', function(err, stdout){
       if (err) return done(err);
       stdout.should.include('install');
       stdout.should.include('complete');

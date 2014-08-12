@@ -11,7 +11,7 @@ var path = require('path');
 var fs = require('fs');
 var vm = require('vm');
 
-var bin = __dirname + '/../bin/component';
+var bin = __dirname + '/../bin/faiton';
 
 describe('component build', function(){
   it('should build', function(done){
