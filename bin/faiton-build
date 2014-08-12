@@ -44,11 +44,11 @@ program.on('--help', function(){
 
 program.parse(process.argv);
 
-if (program.debug) require('debug').enable('component-build*,component-consoler*,component-resolver*');
+if (program.debug) require('debug').enable('faiton-build*,component-consoler*,component-resolver*');
 
 var Resolve = require('component-resolver');
 var utils = require('component-consoler');
-var Build = require('component-build');
+var Build = require('faiton-build');
 var mkdir = require('mkdirp');
 var path = require('path');
 var fs = require('fs');

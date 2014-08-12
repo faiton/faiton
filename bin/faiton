@@ -60,7 +60,7 @@ if (!cmd) program.help();
 
 // executable
 
-var bin = 'component-' + cmd;
+var bin = 'faiton-' + cmd;
 
 // local or resolve to absolute executable path
 

@@ -1,5 +1,5 @@
 {
-  "name": "component",
+  "name": "faiton",
   "version": "1.0.0-rc5",
   "description": "Component package manager consuming git repositories",
   "keywords": [
@@ -10,9 +10,9 @@
     "module"
   ],
   "author": "TJ Holowaychuk <tj@vision-media.ca>",
-  "repository": "component/component",
+  "repository": "faiton/faiton",
   "dependencies": {
-    "component-build": "^1.0.3",
+    "faiton-build": "^1.0.3",
     "component-consoler": "^1.1.1",
     "component-flatten": "^1.0.0",
     "component-ls": "^2.1.0",
@@ -39,21 +39,21 @@
     "should": "3"
   },
   "bin": {
-    "component": "bin/component",
-    "component-build": "bin/component-build",
-    "component-crawl": "bin/component-crawl",
-    "component-duplicates": "bin/component-duplicates",
-    "component-help": "bin/component-help",
-    "component-install": "bin/component-install",
-    "component-link": "bin/component-link",
-    "component-ls": "bin/component-ls",
-    "component-outdated": "bin/component-outdated",
-    "component-pin": "bin/component-pin",
-    "component-search": "bin/component-search",
-    "component-update": "bin/component-update",
-    "component-validate": "bin/component-validate"
+    "faiton": "bin/faiton",
+    "faiton-build": "bin/faiton-build",
+    "faiton-crawl": "bin/faiton-crawl",
+    "faiton-duplicates": "bin/faiton-duplicates",
+    "faiton-help": "bin/faiton-help",
+    "faiton-install": "bin/faiton-install",
+    "faiton-link": "bin/faiton-link",
+    "faiton-ls": "bin/faiton-ls",
+    "faiton-outdated": "bin/faiton-outdated",
+    "faiton-pin": "bin/faiton-pin",
+    "faiton-search": "bin/faiton-search",
+    "faiton-update": "bin/faiton-update",
+    "faiton-validate": "bin/faiton-validate"
   },
-  "main": "lib/component",
+  "main": "lib/faiton",
   "engines": {
     "node": ">= 0.10.0"
   },
