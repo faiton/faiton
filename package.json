@@ -1,6 +1,6 @@
 {
   "name": "faiton",
-  "version": "1.0.0-rc5",
+  "version": "1.0.0",
   "description": "Component package manager consuming git repositories",
   "keywords": [
     "component",
