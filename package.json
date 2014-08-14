@@ -1,6 +1,6 @@
 {
   "name": "faiton",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Component package manager consuming git repositories",
   "keywords": [
     "component",
@@ -12,7 +12,7 @@
   "author": "TJ Holowaychuk <tj@vision-media.ca>",
   "repository": "faiton/faiton",
   "dependencies": {
-    "faiton-build": "^1.0.3",
+    "faiton-build": "^1.2.3",
     "component-consoler": "^1.1.1",
     "component-flatten": "^1.0.0",
     "component-ls": "^2.1.0",
